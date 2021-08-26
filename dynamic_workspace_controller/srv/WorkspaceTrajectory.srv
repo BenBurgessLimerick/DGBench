@@ -1,0 +1,4 @@
+string trajectory_name
+float32 speed
+int32 trajectory_number
+---
