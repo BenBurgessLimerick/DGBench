@@ -1,11 +1,25 @@
 # Dynamic Grasping Benchmark
-Benchmark for robotic grasping in dynamic environments.
-
-Under construction.
+- [Dynamic Grasping Benchmark](#dynamic-grasping-benchmark)
+  - [Motivation](#motivation)
+  - [Construction](#construction)
+    - [Bill of Materials](#bill-of-materials)
+      - [Purchased Parts](#purchased-parts)
+      - [Fastners](#fastners)
+      - [Printed Parts](#printed-parts)
+    - [Manufacture Instructions](#manufacture-instructions)
+  - [Usage](#usage)
+  - [Example Results](#example-results)
+  
+## Motivation 
 
 ## Construction
+
 ### Bill of Materials
+
 #### Purchased Parts
+
+The table below provides a link to an Australian distributor for all purchased parts used in the construction of the dynamic workspace. All parts can be substiuted for a similar product from an alternative source.
+
 | Part Name | Specification | Quantity | Source |
 | ---- | ----- | ---- | ---- |
 | Arduino CNC Shield | | 1 | https://www.makerstore.com.au/product/cnc-shield-no-drivers/ |
@@ -21,6 +35,7 @@ Under construction.
 | 12mm MDF Sheet | | 1 | |
 
 #### Fastners
+
 | Part Name | Length | Quantity | Use |
 | ---- | ---- | ---- | ---- |
 | M5 Socket Head | 55mm | 8 | Idler Pulley Axles |
@@ -32,6 +47,9 @@ Under construction.
 | M3 Nut | | 4 | |
 
 #### Printed Parts
+
+All parts were printed in PLA with 20% infill. 
+
 | Part Name | Quantity | File Name |
 | ---- | ---- | ---- |
 | Motor Mount Left | 1 | |
@@ -42,3 +60,9 @@ Under construction.
 | Idler Pulley | 8 | |
 | X Carriage | 1 | |
 | Belt Clip | 4 | |
+
+### Manufacture Instructions
+
+## Usage
+
+## Example Results
