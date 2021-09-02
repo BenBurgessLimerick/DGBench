@@ -13,7 +13,9 @@
   - [Example Results](#example-results)
     - [Trajectories](#trajectories)
     - [Results](#results)
-  
+
+<!-- ![Dynamic Workspace Render](/images/DynamicWorkspaceRender.png) -->
+
 ## Motivation 
 
 The dynamic grasping benchmark was motivated by a desire to encourage reproducible evaluation of robot performance on dynamic grasping tasks. Existing methods for measuring dynamic grasping performance differ greatly in the type and difficulty of task. Some systems are tested with objects moving on predictable trajectories only. In other cases the object is moved randomly by a human, but object motion stops before the robot completes the grasping action. A need was identified for a system that enables repeatable evaluation of robot performance on various dynamic grasping tasks. 
