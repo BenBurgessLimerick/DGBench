@@ -1,6 +1,7 @@
 # Dynamic Grasping Benchmark
 - [Dynamic Grasping Benchmark](#dynamic-grasping-benchmark)
   - [Motivation](#motivation)
+  - [Design](#design)
   - [Construction](#construction)
     - [Bill of Materials](#bill-of-materials)
       - [Purchased Parts](#purchased-parts)
@@ -8,9 +9,22 @@
       - [Printed Parts](#printed-parts)
     - [Manufacture Instructions](#manufacture-instructions)
   - [Usage](#usage)
+    - [Method](#method)
   - [Example Results](#example-results)
+    - [Trajectories](#trajectories)
+    - [Results](#results)
   
 ## Motivation 
+
+The dynamic grasping benchmark was motivated by a desire to encourage reproducible evaluation of robot performance on dynamic grasping tasks. Existing methods for measuring dynamic grasping performance differ greatly in the type and difficulty of task. Some systems are tested with objects moving on predictable trajectories only. In other cases the object is moved randomly by a human, but object motion stops before the robot completes the grasping action. A need was identified for a system that enables repeatable evaluation of robot performance on various dynamic grasping tasks. 
+
+## Design
+
+The design presented consists of an XY motion platform that can move objects through arbitrary trajectories at various speeds. The system uses a CoreXY motion platform design that is described [here](https://corexy.com/theory.html). All parts in the design can be 3D printed or easily sourced. 
+
+The dynamic workspace platform is controlled by an Arduino running [Grbl](https://github.com/gnea/grbl) that interprets and executes g-code commands, in the same way a 3D printer or CNC machine would. This allows for precise control of the platform, and therefore the induced object motion. 
+
+![Dynamic Workspace Design](/images/AnnotatedWorkspace.png)
 
 ## Construction
 
@@ -65,4 +79,13 @@ All parts were printed in PLA with 20% infill.
 
 ## Usage
 
+### Method
+
 ## Example Results
+
+### Trajectories
+
+![Trajectories](/images/ExampleTrajectories.svg)
+
+### Results
+![Results](/images/ExampleResults.svg)
