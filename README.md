@@ -56,7 +56,7 @@ The table below provides a link to an Australian distributor for all purchased p
 | ---- | ---- | ---- | ---- |
 | M5 Socket Head | 55mm | 8 | Idler Pulley Axles |
 | M5 Countersunk | 30mm | 16 | Mounts to Base |
-| M5 Socket Head | ?? Into Bearing blocks | 24 | Carriage to Bearing Blocks |
+| M5 Socket Head | 15mm | 24 | Carriage to Bearing Blocks |
 | M5 Nyloc Nut | | 20 |  |
 | M5 Washers | | 16 | Idler Pulley Spacers |
 | M3 Socket Head | 15mm | 12 | Motor to Mounts, Limit Switch to Mounts |
@@ -68,14 +68,14 @@ All parts were printed in PLA with 20% infill.
 
 | Part Name | Quantity | File Name |
 | ---- | ---- | ---- |
-| Motor Mount Left | 1 | |
-| Motor Mount Right | 1 | |
-| Idler Block Left | 1 | |
-| Idler Block Right | 1 | |
-| Y Carriage | 2 | |
-| Idler Pulley | 8 | |
-| X Carriage | 1 | |
-| Belt Clip | 4 | |
+| Motor Mount Left | 1 | cad/stls/StepperMount_Left.stl |
+| Motor Mount Right | 1 | cad/stls/StepperMount_Right.stl |
+| Idler Block Left | 1 | cad/stls/IdlerBlock_Left.stl  |
+| Idler Block Right | 1 | cad/stls/IdlerBlock_Right.stl  |
+| Y Carriage End Block | 2 | cad/stls/YAxisEndBlock.stl  |
+| Idler Pulley | 8 | cad/stls/IdlerPulley.stl  |
+| X Carriage | 1 | cad/stls/XCarriage.stl  |
+| Belt Clip | 4 | cad/stls/BeltClip.stl |
 
 ### Manufacture Instructions
 
