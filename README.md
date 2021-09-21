@@ -77,12 +77,6 @@ All parts were printed in PLA with 20% infill.
 | X Carriage | 1 | cad/stls/XCarriage.stl  |
 | Belt Clip | 4 | cad/stls/BeltClip.stl |
 
-### Manufacture Instructions
-
-## Usage
-
-### Method
-
 ## Example Results
 
 ### Trajectories
