@@ -1,4 +1,7 @@
-# Dynamic Grasping Benchmark
+# DGBench: An Open-Source, Reproducible Benchmark for Dynamic Grasping
+
+Paper available [here](https://arxiv.org/abs/2204.13879)
+
 - [Dynamic Grasping Benchmark](#dynamic-grasping-benchmark)
   - [Motivation](#motivation)
   - [Design](#design)
