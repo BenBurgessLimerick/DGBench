@@ -10,9 +10,10 @@ Paper available [here](https://arxiv.org/abs/2204.13879)
       - [Purchased Parts](#purchased-parts)
       - [Fastners](#fastners)
       - [Printed Parts](#printed-parts)
-  - [Example Results](#example-results)
-    - [Trajectories](#trajectories)
-    - [Results](#results)
+    - [Build Instructions](#build-instructions)
+    - [Firmware Installation](#firmware-installation)
+  - [ROS Control](#ros-control)
+  - [Example Experiment](#example-experiment)
 
 <!-- ![Dynamic Workspace Render](/images/DynamicWorkspaceRender.png) -->
 
@@ -48,7 +49,8 @@ The table below provides a link to an Australian distributor for all purchased p
 | Rubber Sealed Bearing | 5x11x4mm | 16 | https://plaig.com.au/product/5x11x4mm-bearing-rubber-seals-mr115-2rs/ |
 | Stepper Motor Driver | DRV8825 | 2 | https://www.makerstore.com.au/product/elec-drv8825/ |
 | 10mm Diameter Smooth Rod | 500mm long | 4 | https://www.makerstore.com.au/product/hard-rod-10/ | 
-| 12mm MDF Sheet | | 1 | |
+| 12mm MDF Sheet |650x600mm | 1 | |
+| 12mm MDF Sheet |260x260mm | 1 | |
 
 #### Fastners
 
@@ -77,11 +79,46 @@ All parts were printed in PLA with 20% infill.
 | X Carriage | 1 | cad/stls/XCarriage.stl  |
 | Belt Clip | 4 | cad/stls/BeltClip.stl |
 
-## Example Results
+### Build Instructions
 
-### Trajectories
+1. Start by assembling the object platform support consisting of the X Carriage and two linear bearings.
+2. Attach remaining linear bearings to the Y Carriage End Blocks.
+3. Attach stepper motors to motor mounts. 
+4. Insert bearings and idler pulleys into the Idler Blocks and Y Carriage End Blocks. Take note of idler pulley orientation in the provided CAD files. 
+5. Assemble parts on smooth rods to form a free standing assembly on top of the MDF base sheet. Mark, drill, and bolt holes to permanently mount motor mounts and idler blocks. 
+6. Attach limit switches to Motor Mount Left. 
+7. Attach CNC shield to Arduino and insert stepper motor drivers into shield. A guide for general usage of the shield is available [here](https://www.makerstore.com.au/wp-content/uploads/filebase/publications/CNC-Shield-Guide-v1.0.pdf).
+8. Complete wiring of stepper motors and limit switches into shield. 
+
+### Firmware Installation
+
+The Arduino should be flashed with the grbl firware in this repository. Changes to the grbl code for this project are contained in config.h, defaults.h, defaults_mobile_workspace.h. To upload to Arduino, use Arduino IDE to open workspace_firmware/grbl-master/grbl/examples/grblUpload/grblUpload.ino and upload to board.
+
+## ROS Control
+ROS control is provided by running the dynamic_workspace_controller/scripts/ros_control.py node. This node advertises two services.
+1. /reset_workspace: Will reset the workspace to a home position cancelling the current motion. 
+2. /run_workspace_trajectory: Run a workspace trajectory at a given speed. 
+
+Custom trajectories can be added to trajectory_shapes.py. 
+
+## Example Experiment
+We present an example experiment to evaluate the performance of various perception systems on a dynamic grasping task. More details are available in the associated publication.
+
+The experiment procedure is as follows:
+1. The robot drives to a home position 500mm above the center of the workspace and the fingers are openned. 
+2. Simulatenously, a visual servoing controller is enabled, and the dynamic workspace begins a trajectory. 
+3. The robot follows the actions of the controller until its fingers are closed, or the system loses tracking of the object. 
+4. Once fingers are closed or task is abandoned, the hand is lifted from the workspace.
+5. Grasp success is evalued and the workspace and robot are reset. 
+
+For each perception system 20 trials were conducted at each speed. A set of 20 random trajectories was generated and used for each perception system and speed. The figure below presents 3 example trajectories from the set of 20. 
 
 ![Trajectories](/images/ExampleTrajectories.svg)
 
-### Results
+For each trial, the time between the robot starting controller movement (step 2 in the above procedure) and the robot closing its fingers or losing tracking of the object was recorded. We also record the result of the trial categorised into one of three options:
+1. Success: The object is succesfully grasped and lifted from the workspace. 
+2. Perception Failure: The object left the field of view of the perception system and tracking was lost. 
+3. Control Failure: The system maintained tracking, but failure resulted from poor grasp pose synthesis or control. 
+
+The results below demonstrate the improved performance of a dual hand perception system compared to a conventional wrist mounted configuration. In particular, the perception failure rate is signficantly reduced. 
 ![Results](/images/ExampleResults.svg)
